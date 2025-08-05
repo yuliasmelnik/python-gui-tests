@@ -39,6 +39,15 @@ class GroupHelper:
         self.delete_group.window(auto_id="uxOKAddressButton").click()
         self.close_group_editor()
 
+    def delete_group_with_contacts(self, index):
+        self.open_group_editor()
+        self.select_group(index)
+        self.group_editor.window(auto_id="uxDeleteAddressButton").click()
+        self.delete_group = self.app.application.window(title="Delete group")
+        self.delete_group.window(auto_id="uxDeleteAllRadioButton").click()
+        self.delete_group.window(auto_id="uxOKAddressButton").click()
+        self.close_group_editor()
+
     def count(self):
         self.get_group_list()
         return len(self.get_group_list())
