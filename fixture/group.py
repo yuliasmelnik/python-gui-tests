@@ -48,6 +48,16 @@ class GroupHelper:
         self.delete_group.window(auto_id="uxOKAddressButton").click()
         self.close_group_editor()
 
+    def modify_group(self, index, group):
+        self.open_group_editor()
+        self.select_group(index)
+        self.group_editor.window(auto_id="uxEditAddressButton").click()
+        input = self.group_editor.window(class_name="Edit")
+        input.set_text(group)
+        input.type_keys("/n")
+        self.close_group_editor()
+
+
     def count(self):
         self.get_group_list()
         return len(self.get_group_list())
