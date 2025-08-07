@@ -13,4 +13,4 @@ def test_delete_group(app):
     assert len(old_list) - 1 == app.groups.count()
     new_list = app.groups.get_group_list()
     old_list.pop(index)
-    assert sorted(old_list) == sorted(new_list)
+    assert sorted(old_list, key=Group.name_group) == sorted(new_list, key=Group.name_group)

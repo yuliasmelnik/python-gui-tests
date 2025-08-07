@@ -8,5 +8,8 @@ class Group:
     def __repr__(self):
         return "%s" % (self.name)
 
-    def len(self):
-        return len(self.name)
+    def __eq__(self, other):
+        return self.name == other.name
+
+    def name_group(self):
+        return self.name

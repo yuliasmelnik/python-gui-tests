@@ -8,4 +8,4 @@ def test_add_group(app):
     app.groups.add_new_group(group)
     new_list = app.groups.get_group_list()
     old_list.append(group)
-    assert sorted(old_list, key=Group.len) == sorted(new_list, key=Group.len)
+    assert sorted(old_list, key=Group.name_group) == sorted(new_list, key=Group.name_group)
