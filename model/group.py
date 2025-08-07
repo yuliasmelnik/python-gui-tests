@@ -7,3 +7,6 @@ class Group:
 
     def __repr__(self):
         return "%s" % (self.name)
+
+    def len(self):
+        return len(self.name)
